@@ -36,6 +36,7 @@ Counts the total number of seats in the election.
 SELECT DISTINCT COUNT(Parliament_Constituency) AS Total_Seats
 FROM constituencywise_results;
 ```
+![Alt text](https://github.com/prakyath21/2024-Lok-Sabha-Election-Analysis/blob/main/images/Total%20Seats.png?raw=true)
 
 
 ### 2.Calculates total seats available in each state.
@@ -47,4 +48,33 @@ JOIN states s ON sr.State_ID = s.State_ID
 GROUP BY s.State
 ORDER BY s.State;
 ```
-### 
+![Alt text](https://github.com/prakyath21/2024-Lok-Sabha-Election-Analysis/blob/main/images/Seats_for_each_state.png?raw=true)
+
+### Total Seats Won by NDA Allianz 
+``` sql
+SELECT 
+    SUM(CASE 
+            WHEN party IN (
+                'Bharatiya Janata Party - BJP', 
+                'Telugu Desam - TDP', 
+				'Janata Dal  (United) - JD(U)',
+                'Shiv Sena - SHS', 
+                'AJSU Party - AJSUP', 
+                'Apna Dal (Soneylal) - ADAL', 
+                'Asom Gana Parishad - AGP',
+                'Hindustani Awam Morcha (Secular) - HAMS', 
+                'Janasena Party - JnP', 
+				'Janata Dal  (Secular) - JD(S)',
+                'Lok Janshakti Party(Ram Vilas) - LJPRV', 
+                'Nationalist Congress Party - NCP',
+                'Rashtriya Lok Dal - RLD', 
+                'Sikkim Krantikari Morcha - SKM'
+            ) THEN [Won]
+            ELSE 0 
+        END) AS NDA_Total_Seats_Won
+FROM 
+    partywise_results
+
+```
+![Alt text](https://github.com/prakyath21/2024-Lok-Sabha-Election-Analysis/blob/main/images/NDA_TOTAL_SEATS.png?raw=true)
+
