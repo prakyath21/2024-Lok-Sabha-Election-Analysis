@@ -24,7 +24,8 @@ The following tables are used:
 ---
 
 ## Schema/ERD Diagram
-https://github.com/prakyath21/2024-Lok-Sabha-Election-Analysis/blob/main/images/Entity%20relationship.png?raw=true
+![Alt text](https://github.com/prakyath21/2024-Lok-Sabha-Election-Analysis/blob/main/images/Entity%20relationship.png?raw=true)
+
 
 ## SQL Queries
 
